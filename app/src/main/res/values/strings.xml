@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">spinner languages</string>
+    <string name="okBtn">OK</string>
+    <string name="chooseLang">Выберите язык</string>
+    <string name="welcome">Добро Пожаловать</string>
+
+    <string-array name="language">
+        <item>Русский</item>
+        <item>English</item>
+
+    </string-array>
+</resources>

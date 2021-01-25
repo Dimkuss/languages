@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">spinner languages</string>
+    <string name="okBtn">OK</string>
+    <string name="chooseLang">Choose your language</string>
+    <string name="welcome">You are Welcome</string>
+
+
+</resources>
