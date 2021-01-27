@@ -1,5 +1,6 @@
 package com.example.spinnerlanguages;
 
+import androidx.annotation.StyleRes;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.res.Configuration;
@@ -17,23 +18,23 @@ import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
     private Spinner mLangSpinner;
+    private Spinner mColorSpinner;
     private Button mOkBtn;
-    private TextView choose;
-    private TextView hello;
-    private String lang;
+    private static @StyleRes int AppThemeGreen = R.style.AppThemeGreen;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Utils.onActivityCreateSetTheme(this);
         setContentView(R.layout.activity_main);
         initViews();
 
     }
     private void initViews() {
         mLangSpinner = findViewById(R.id.languagesSpinner);
+        mColorSpinner = findViewById(R.id.colorspinner);
         mOkBtn = findViewById(R.id.okBtn);
-        choose = findViewById(R.id.chooseLang);
-        hello = findViewById(R.id.welcome);
+        
         initSpinnerLang();
 
 }
@@ -64,5 +65,19 @@ mLangSpinner.setAdapter(adapterLang);
              }
 
         });
+
 }
-    }
+        private void initSpinnerColor(){
+            ArrayAdapter<CharSequence> adapterLang = ArrayAdapter.createFromResource(this, R.array.color, android.R.layout.simple_spinner_item);
+            adapterLang.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            mColorSpinner.setAdapter(adapterLang);
+            mOkBtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    switch (v.getId()){
+                        case "Зеленый":
+                            Utils.changeToTheme(this, Utils.THEME_DEFAULT);
+
+                }}
+            });
+    }}
