@@ -15,4 +15,10 @@
         <item>Синий</item>
 
     </string-array>
+    <string-array name="margin">
+        <item>Большие</item>
+        <item>Средние</item>
+        <item>Мелкие</item>
+
+    </string-array>
 </resources>
